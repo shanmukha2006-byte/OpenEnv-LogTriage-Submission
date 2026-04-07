@@ -6,4 +6,4 @@ EXPOSE 7860
 ENV API_BASE_URL=""
 ENV MODEL_NAME=""
 ENV HF_TOKEN=""
-CMD ["/bin/bash", "-c", "python3 -m http.server 7860 & python3 inference.py"]
+CMD ["python3", "inference.py"]
