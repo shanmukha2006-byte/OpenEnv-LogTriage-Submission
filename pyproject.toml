@@ -1,12 +1,12 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires      = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "openenv-logtriage-team-shanmukha"
-version = "0.1.0"
+name        = "openenv-logtriage-team-shanmukha"
+version     = "0.1.0"
 description = "RL environment for DevOps log triage"
-readme = "README.md"
+readme      = "README.md"
 requires-python = ">=3.9"
 
 authors = [
@@ -14,17 +14,18 @@ authors = [
 ]
 
 dependencies = [
-    "requests",
-    "numpy",
-    "gymnasium",
-    "torch",
-    "openenv-core>=0.2.0",
-    "fastapi",
-    "uvicorn"
+  "requests",
+  "numpy",
+  "gymnasium",
+  "torch",
+  "openenv-core>=0.2.0",
+  "fastapi",
+  "uvicorn",
 ]
 
 [project.scripts]
-server = "server.app:main"
+server = "server.app:main"         # 'server' CLI command → server/app.py:main()
 
 [tool.setuptools.packages.find]
-include = ["server*"]
+where   = ["."]
+include = ["server*", "core*"]     # Both packages discovered and installed
