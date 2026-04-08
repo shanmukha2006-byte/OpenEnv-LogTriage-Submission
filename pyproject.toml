@@ -8,19 +8,23 @@ version = "0.1.0"
 description = "RL environment for DevOps log triage"
 readme = "README.md"
 requires-python = ">=3.9"
+
 authors = [
   { name = "CH Shanmukha Venkata Lakshman" }
 ]
+
 dependencies = [
     "requests",
     "numpy",
     "gymnasium",
     "torch",
-    "openenv-core>=0.2.0"
+    "openenv-core>=0.2.0",
+    "fastapi",
+    "uvicorn"
 ]
 
 [project.scripts]
 server = "server.app:main"
 
 [tool.setuptools.packages.find]
-where = ["."]
+include = ["server*"]
